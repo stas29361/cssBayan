@@ -10,15 +10,33 @@ body {
 main {
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
 }
 
 .block {
-  cursor: pointer;
   color: blue;
 }
 
-.block_img.first {
-  display: flow-root;
+.block_text {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.inputfield {
+  width: 0;
+  height: 0;
+  appearance: none;
+  position: absolute;
+}
+
+.block_text:hover ~ div {
+  display: block;
+}
+
+.inputfield:checked ~ div {
+  display: block;
+  color: black;
 }
 
 .block_img {
@@ -26,20 +44,23 @@ main {
   justify-content: center;
 }
 
-.block_text {
-  display: block;
-  position: relative;
+.block label:before {
+  content: '\27A4';
+  float: right;
 }
 
-.block_text::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-style: solid;
-  border-width: 10px 5px 0 5px;
-  border-color: #2f8aeb transparent transparent transparent;
-  top: 50%;
-  right: 15px;
+.block input:checked + label {
+  color: rgb(0, 0, 0);
+}
+
+.block input:hover + label:before {
+  transition: transform .35s;
+  transform: rotate(90deg);
+}
+
+.block input:checked + label:before {
+  transition: transform .35s;
+  transform: rotate(90deg);
 }
 
 .block:hover {
@@ -54,8 +75,3 @@ main {
   display: block;
 }
 
-.block_text:hover::after {
-  border-style: solid;
-  border-width: 0 5px 10px 5px;
-  border-color: transparent transparent #2f8aeb transparent;
-}
