@@ -4,9 +4,14 @@ html {
 
 body {
   background-color: rgb(243, 243, 236);
-  max-width: 500px;
+  max-width: 500px ;
   margin: 20px auto;
 }
+
+p {
+  text-align: center;
+}
+
 main {
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -30,18 +35,17 @@ main {
   position: absolute;
 }
 
-.block_text:hover ~ div {
-  display: block;
-}
-
-.inputfield:checked ~ div {
-  display: block;
-  color: black;
-}
-
 .block_img {
   display: none;
-  justify-content: center;
+}
+
+.block_text:hover ~ .block_img {
+  display: block;
+}
+
+.inputfield:checked ~ .block_img {
+  display: block;
+  color: black;
 }
 
 .block label:before {
@@ -66,12 +70,3 @@ main {
 .block:hover {
   color: black;
 }
-
-.block_text:hover+div {
-  display: block;
-}
-
-.block_img:hover {
-  display: block;
-}
-
