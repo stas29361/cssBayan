@@ -1,0 +1,72 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(243, 243, 236);
+  max-width: 500px ;
+  margin: 20px auto;
+}
+
+p {
+  text-align: center;
+}
+
+main {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+}
+
+.block {
+  color: rgb(22, 77, 216);
+}
+
+.block_text {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.inputfield {
+  width: 0;
+  height: 0;
+  appearance: none;
+  position: absolute;
+}
+
+.block_img {
+  display: none;
+}
+
+.block_text:hover ~ .block_img {
+  display: block;
+}
+
+.inputfield:checked ~ .block_img {
+  display: block;
+  color: rgb(0, 0, 0);
+}
+
+.block label:before {
+  content: '\27A4';
+  float: right;
+}
+
+.block input:checked + label {
+  color: rgb(0, 0, 0);
+}
+
+.block input:hover + label:before {
+  transition: transform .35s;
+  transform: rotate(90deg);
+}
+
+.block input:checked + label:before {
+  transition: transform .35s;
+  transform: rotate(90deg);
+}
+
+.block:hover {
+  color: rgb(0, 0, 0);
+}
