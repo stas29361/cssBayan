@@ -19,7 +19,7 @@ main {
 }
 
 .block {
-  color: blue;
+  color: rgb(22, 77, 216);
 }
 
 .block_text {
@@ -45,7 +45,7 @@ main {
 
 .inputfield:checked ~ .block_img {
   display: block;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .block label:before {
@@ -68,5 +68,5 @@ main {
 }
 
 .block:hover {
-  color: black;
+  color: rgb(0, 0, 0);
 }
